@@ -1,0 +1,19 @@
+[package]
+name = "pxb-engine"
+version = "1.36.0"
+edition = "2021"
+description = "Pixie Chess Engine & High-Speed Native Self-Play Data Generator"
+
+[lib]
+name = "pxb_engine"
+path = "src/lib.rs"
+crate-type = ["cdylib", "rlib"]
+
+[[bin]]
+name = "pxb-selfplay"
+path = "src/bin/pxb-selfplay.rs"
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+codegen-units = 1
